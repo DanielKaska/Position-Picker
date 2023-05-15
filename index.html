@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Position picker for MTA:SA</title>
+</head>
+
+<style>
+    .container{
+        min-width: 100px;
+    }
+
+    img{
+        float:left;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+</style>
+
+
+<body>
+    <div class="container">
+        <p id = "x">X: 0</p>
+        <p id = "y">Y: 0</p>
+    </div>
+    <img src="map.jpg"/>
+
+    <div class="ri">
+        <p>Autor: Daniel Kaska</p>
+    </div>
+
+    
+</body>
+
+
+<script>
+
+    function printMousePos(event) {
+        let x = (event.clientX*6)-3000;
+        let y = -(event.clientY*6)+3000;
+        document.getElementById("x").innerText = "X: " + x;
+        document.getElementById("y").innerText = "Y: " + y;
+    }
+    document.addEventListener("click", printMousePos);
+
+</script>
+
+    
+
+
+</html>
